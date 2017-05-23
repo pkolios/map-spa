@@ -1,0 +1,15 @@
+body {
+  margin: 0;
+  font-family:-apple-system, BlinkMacSystemFont,  Roboto, 'Helvetica Neue', Arial, sans-serif
+}
+
+#map {
+  height: 100vh;
+  width: 100%;
+  background-color: grey;
+}
+
+footer {
+  margin: 200px auto 0 auto;
+  text-align: center;
+}

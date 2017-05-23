@@ -16,6 +16,9 @@ Including another URLconf
 from django.conf.urls import url
 from django.contrib import admin
 
+import mapapp.views
+
 urlpatterns = [
+    url(r'^', mapapp.views.index, name='index'),
     url(r'^admin/', admin.site.urls),
 ]
