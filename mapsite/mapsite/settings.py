@@ -127,3 +127,4 @@ STATICFILES_DIRS = [
 # 3rd Party Service Credentials
 
 GOOGLE_MAPS_API_KEY = 'AIzaSyC3UFTx68hPVcldOAhrs0yI_DBa7co_zeo'
+GOOGLE_MAPS_TYPE = 'street_address'

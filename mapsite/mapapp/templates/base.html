@@ -29,7 +29,8 @@ src="https://maps.googleapis.com/maps/api/js?key={{ GOOGLE_MAPS_API_KEY }}&callb
 </script>
 <script type="text/javascript">
     var CONFIG = {
-        postUrl: {% url 'post_address' %},
+        postUrl: "{% url 'post_address' %}",
+        mapsType: "{{ GOOGLE_MAPS_TYPE }}",
     }
 </script>
 </body>
