@@ -1,5 +1,10 @@
-{% for address in addresses %}
-<div class="address">
-  <p>{{ address.text }}</p>
+<div id="addresses">
+
+  {% if addresses %}
+    {% for address in addresses %}
+    <p>{{ address.full_address }}</p>
+    {% endfor %}
+  {% else %}
+    <p>No address are available.</p>
+  {% endif %}
 </div>
-{% endfor %}
