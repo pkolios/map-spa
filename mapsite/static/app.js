@@ -38,14 +38,13 @@ function placeMarker(position, map) {
  * @param {Object} map - The google map object.
  */
 function getGeocodeInfo(e, map) {
-  var addressesDiv = document.getElementById("addresses");
-  addressesDiv.innerHTML = "<p>Updating...</p>";
-
   geocoder.geocode({
     'latLng': e.latLng
   }, function(results, status) {
     if (status == google.maps.GeocoderStatus.OK) {
       if (results[0] && results[0].types[0] == CONFIG.mapsType) {
+        var addressesDiv = document.getElementById("addresses");
+        addressesDiv.innerHTML = "<p>Updating...</p>";
         placeMarker(e.latLng, map);
         postAddress({
             lat:e.latLng.lat().toFixed(6), lon:e.latLng.lng().toFixed(6),
@@ -70,6 +69,8 @@ function postAddress(address) {
     }
     else if (xhr.status !== 200) {
       console.log(xhr.responseText);
+      var addressesDiv = document.getElementById("addresses");
+      addressesDiv.innerHTML = "<p>Updating Failed.</p>";
     }
   };
   xhr.send(encodeObject(address));
