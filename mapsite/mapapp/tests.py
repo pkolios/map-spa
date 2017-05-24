@@ -1,4 +1,4 @@
-from django.test import TestCase
+from django.test import TestCase, override_settings
 from django.urls import reverse
 
 from . import models
@@ -12,6 +12,7 @@ def create_address(full_address, lat=10.0, lon=20.0):
         full_address=full_address, lat=lat, lon=lon)
 
 
+@override_settings(ENABLE_GOOGLE_FUSION=False)
 class IndexViewTests(TestCase):
     def test_index_view_with_no_addresses(self):
         """
@@ -30,6 +31,7 @@ class IndexViewTests(TestCase):
         self.assertEqual(response.status_code, 200)
 
 
+@override_settings(ENABLE_GOOGLE_FUSION=False)
 class PostAddressViewTests(TestCase):
     def test_post_address_view_with_correct_input(self):
         """

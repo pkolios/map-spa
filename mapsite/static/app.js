@@ -38,6 +38,9 @@ function placeMarker(position, map) {
  * @param {Object} map - The google map object.
  */
 function getGeocodeInfo(e, map) {
+  var addressesDiv = document.getElementById("addresses");
+  addressesDiv.innerHTML = "<p>Updating...</p>";
+
   geocoder.geocode({
     'latLng': e.latLng
   }, function(results, status) {

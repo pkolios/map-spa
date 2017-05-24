@@ -128,3 +128,10 @@ STATICFILES_DIRS = [
 
 GOOGLE_MAPS_API_KEY = 'AIzaSyC3UFTx68hPVcldOAhrs0yI_DBa7co_zeo'
 GOOGLE_MAPS_TYPE = 'street_address'
+
+ENABLE_GOOGLE_FUSION = True
+GOOGLE_FUSION_SCOPE = 'https://www.googleapis.com/auth/fusiontables'
+GOOGLE_FUSION_REDIRECT_URL = 'http://localhost:8000/oauth2callback/'
+GOOGLE_FUSION_TABLE_ID = '1HDwYKnUTiUs2XDrO360jjKtvpSHMeZi3DEvgvNtL'
+GOOGLE_FUSION_URL = 'https://fusiontables.google.com/data?docid={}'.format(
+    GOOGLE_FUSION_TABLE_ID)

@@ -1,10 +1,18 @@
-<div id="addresses">
-
-  {% if addresses %}
-    {% for address in addresses %}
-    <p>{{ address.full_address }}</p>
-    {% endfor %}
-  {% else %}
-    <p>No address are available.</p>
-  {% endif %}
+<div class="address-container">
+  <h3>Stored addresses</h3>
+  <div class="pull-right">
+    <a href="{{ GOOGLE_FUSION_URL }}">Google Fusion Table</a> |
+    <a href="{% url 'purge_fusion' %}">Purge Fusion Table</a> |
+    <a href="{% url 'purge_db' %}">Purge Database</a>
+  </div>
+  
+  <div id="addresses">
+    {% if addresses %}
+      {% for address in addresses %}
+      <p>{{ address.full_address }}</p>
+      {% endfor %}
+    {% else %}
+      <p>No address are available.</p>
+    {% endif %}
+  </div>
 </div>
